@@ -14,7 +14,7 @@ Console.WriteLine($"Количество счастливых билетиков
 
 // Реализовать итеративный O(N) алгоритм возведения числа в степень.
 
-AlgoComplexity algoComplexity = new AlgoComplexity();
+/*AlgoComplexity algoComplexity = new AlgoComplexity();
 var expResult = algoComplexity.Exponention(2, 8);
 Console.WriteLine(expResult);
 
@@ -23,4 +23,8 @@ Console.WriteLine(fibr);
 
 var fibl = algoComplexity.FibonacciIterative(10);
 Console.WriteLine(fibl);
+*/
+
+
+
 
