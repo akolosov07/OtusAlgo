@@ -1,6 +1,6 @@
 ﻿using OtusAlgoSorting;
 
-var countArray = new List<int>();
+/*var countArray = new List<int>();
 countArray.Add(100);
 countArray.Add(1000);
 countArray.Add(10_000);
@@ -17,4 +17,9 @@ foreach (var algo in sortingAlgo)
         Tester tester = new Tester();
         tester.TestItem(algo, count);
     }
-}
+}*/
+
+Sorting sorting = new Sorting();
+sorting.SetRandom(20);
+sorting.SelectionSort();
+Console.WriteLine("");

@@ -76,8 +76,47 @@ namespace OtusAlgoSorting
             }
         }
 
+        public void SelectionSort()
+        {
+            for (int j = A.Length - 1; j > 0; j--)
+                Swap(FindMax(j), j);
+        }
 
+        private int FindMax(int j)
+        {
+            int max = 0;
+            for (int i = 1; i <= j; i++)
+            {
+                if (++cmp > 0 && A[i] > A[max])
+                    max = i;
+            }
+            return max;
+        }
 
+        public void HeapSort()
+        {
+            for (int h = N /2 - 1; h >= 0; h--)
+            {
+                Heapify(h, N);
+            }
+            for (int j = N - 1; j > 0; j--)
+            {
+                Swap(0, j);
+                Heapify(0, j);
+            }
+        }
+
+        private void Heapify(int root, int size)
+        {
+            int X = root;
+            int L = 2 * X + 1;
+            int R = 2 * X + 2;
+            if (L < size && A[L] > A[X]) X = L;
+            if (R < size && A[R] > A[X]) X = R;
+            if (X == root) return;
+            Swap(root, X);
+            Heapify(X, size);
+        }
 
     }
 }
