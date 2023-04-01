@@ -39,6 +39,73 @@ namespace OtusAlgoSorting
             }
         }
 
+        public void MergeSort()
+        {
+            Msort(0, N - 1);
+        }
+
+        private void Msort(int L, int R)
+        {
+            if (L >= R) return;
+            int M = (L + R) / 2;
+            Msort(L, M);
+            Msort(M + 1, R);
+            Merge(L, M, R);
+        }
+
+        private void Merge(int L, int M, int R)
+        {
+            int[] T = new int[R - L + 1];
+            int a = L;
+            int b = M + 1;
+            int t = 0;
+            while (a <= M && b <= R)
+            {
+                if (A[a] < A[b])
+                {
+                    T[t++] = A[a++];
+                }
+                else
+                {
+                    T[t++] = A[b++];
+                }
+            }
+            while (a <= M)
+                T[t++] = A[a++];
+            while (b <= R)
+                T[t++] = A[b++];
+
+            for (int i = L; i <= R; i++)
+                A[i] = T[i - L];
+        }
+
+        public void QuickSort()
+        {
+            Qsort(0, N - 1);
+        }
+
+        private void Qsort(int L, int R)
+        {
+            if (L >= R) return;
+            int M = Split(L, R);
+            Qsort(L, M - 1);
+            Qsort(M + 1, R);
+        }
+
+        private int Split(int L, int R)
+        {
+            int P = A[R];
+            int m = L - 1;
+            for (int j = L; j <= R; j++)
+            {
+                if (A[j] <= P)
+                {
+                    Swap(++m, j);
+                }
+            }
+            return m;
+        }
+
         public void Bubble()
         {
             for (int j = N - 1; j >= 0; j--)

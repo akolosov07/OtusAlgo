@@ -36,6 +36,12 @@ namespace OtusAlgoSorting
                 case "Shell":
                     sort.Shell();
                     break;
+                case "MergeSort":
+                    sort.MergeSort();
+                    break;
+                case "QuickSort":
+                    sort.QuickSort();
+                    break;
             }
         }
     }
