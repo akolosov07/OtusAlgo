@@ -6,6 +6,22 @@ using System.Threading.Tasks;
 
 namespace OtusAlgoSorting
 {
+    public class List
+    {
+        public int Value;
+        public List Next;
+
+        public List(int value) : this(value, null)
+        {
+        }
+
+        public List(int value, List next)
+        {
+            Value = value;
+            Next = next;
+        }
+    }
+
     public class Sorting
     {
         int[] A; // массив.
@@ -36,6 +52,133 @@ namespace OtusAlgoSorting
             for (int j = 0; j < N; j++)
             {
                 A[j] = random.Next(N);
+            }
+        }
+
+        public void BucketSort()
+        {
+            int minValue = A[0];
+            int maxValue = A[0];
+
+            for (int i = 1; i < A.Length; i++)
+            {
+                if (A[i] > maxValue)
+                    maxValue = A[i];
+                if (A[i] < minValue)
+                    minValue = A[i];
+            }
+
+            List<int>[] bucket = new List<int>[maxValue - minValue + 1];
+
+            for (int i = 0; i < bucket.Length; i++)
+            {
+                bucket[i] = new List<int>();
+            }
+
+            for (int i = 0; i < A.Length; i++)
+            {
+                bucket[A[i] - minValue].Add(A[i]);
+            }
+
+            int k = 0;
+            for (int i = 0; i < bucket.Length; i++)
+            {
+                if (bucket[i].Count > 0)
+                {
+                    for (int j = 0; j < bucket[i].Count; j++)
+                    {
+                        A[k] = bucket[i][j];
+                        k++;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// алгоритм поразрядкнй сортировки RadixSort
+        /// </summary>
+        public void RadixSort()
+        {
+            int n = A.Length;
+            int max = A[0];
+
+            //find largest element in the Array
+            for (int i = 1; i < n; i++)
+            {
+                if (max < A[i])
+                    max = A[i];
+            }
+
+            for (int place = 1; max / place > 0; place *= 10)
+                RadixSort(place);
+        }
+
+        private void RadixSort(int place)
+        {
+            int n = A.Length;
+            int[] output = new int[n];
+
+            //range of the number is 0-9 for each place considered.
+            int[] freq = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+            //count number of occurrences in freq array
+            for (int i = 0; i < n; i++)
+                freq[A[i] / place % 10]++;
+
+            //Change count[i] so that count[i] now contains actual
+            //position of this digit in output[]
+            for (int i = 1; i < 10; i++)
+                freq[i] += freq[i - 1];
+
+            //Build the output array
+            for (int i = n - 1; i >= 0; i--)
+            {
+                output[freq[(A[i] / place) % 10] - 1] = A[i];
+                freq[(A[i] / place) % 10]--;
+            }
+
+            for (int i = 0; i < n; i++)
+                A[i] = output[i];
+        }
+
+        /// <summary>
+        /// алгоритм сортировки подсчётом CountingSort
+        /// </summary>
+        public void CountingSort()
+        {
+            //поиск минимального и максимального значений
+            var min = A[0];
+            var max = A[0];
+            foreach (int element in A)
+            {
+                if (element > max)
+                {
+                    max = element;
+                }
+                else if (element < min)
+                {
+                    min = element;
+                }
+            }
+
+            //поправка
+            var correctionFactor = min != 0 ? -min : 0;
+            max += correctionFactor;
+
+            var count = new int[max + 1];
+            for (var i = 0; i < A.Length; i++)
+            {
+                count[A[i] + correctionFactor]++;
+            }
+
+            var index = 0;
+            for (var i = 0; i < count.Length; i++)
+            {
+                for (var j = 0; j < count[i]; j++)
+                {
+                    A[index] = i - correctionFactor;
+                    index++;
+                }
             }
         }
 

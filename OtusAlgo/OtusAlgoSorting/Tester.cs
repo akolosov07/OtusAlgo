@@ -42,6 +42,15 @@ namespace OtusAlgoSorting
                 case "QuickSort":
                     sort.QuickSort();
                     break;
+                case "CountingSort":
+                    sort.CountingSort();
+                    break;
+                case "RadixSort":
+                    sort.RadixSort();
+                    break;
+                case "BucketSort":
+                    sort.BucketSort();
+                    break;
             }
         }
     }
