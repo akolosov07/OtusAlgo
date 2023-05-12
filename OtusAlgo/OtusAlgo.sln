@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtusAlgoHashTable", "OtusAl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtusAlgoTrie", "OtusAlgoTrie\OtusAlgoTrie.csproj", "{FC89939E-3053-409B-B6BA-CDDB936DF62A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtusKosarajus", "OtusKosarajus\OtusKosarajus.csproj", "{AE8CE0D7-4871-4C1D-999A-966A76362F79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtusKosarajus", "OtusKosarajus\OtusKosarajus.csproj", "{AE8CE0D7-4871-4C1D-999A-966A76362F79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtusDemoucron", "OtusDemoucron\OtusDemoucron.csproj", "{BC8275DB-B4B5-4493-AF42-7E29F57AB747}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{AE8CE0D7-4871-4C1D-999A-966A76362F79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE8CE0D7-4871-4C1D-999A-966A76362F79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE8CE0D7-4871-4C1D-999A-966A76362F79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC8275DB-B4B5-4493-AF42-7E29F57AB747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC8275DB-B4B5-4493-AF42-7E29F57AB747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC8275DB-B4B5-4493-AF42-7E29F57AB747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC8275DB-B4B5-4493-AF42-7E29F57AB747}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
