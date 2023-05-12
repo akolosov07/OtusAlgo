@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtusAlgoTrie", "OtusAlgoTri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtusKosarajus", "OtusKosarajus\OtusKosarajus.csproj", "{AE8CE0D7-4871-4C1D-999A-966A76362F79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtusDemoucron", "OtusDemoucron\OtusDemoucron.csproj", "{BC8275DB-B4B5-4493-AF42-7E29F57AB747}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtusDemoucron", "OtusDemoucron\OtusDemoucron.csproj", "{BC8275DB-B4B5-4493-AF42-7E29F57AB747}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtusKruskal", "OtusKruskal\OtusKruskal.csproj", "{E0D4FB4E-9F10-4C3D-8487-92C6A528DB1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{BC8275DB-B4B5-4493-AF42-7E29F57AB747}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC8275DB-B4B5-4493-AF42-7E29F57AB747}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC8275DB-B4B5-4493-AF42-7E29F57AB747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0D4FB4E-9F10-4C3D-8487-92C6A528DB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D4FB4E-9F10-4C3D-8487-92C6A528DB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D4FB4E-9F10-4C3D-8487-92C6A528DB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D4FB4E-9F10-4C3D-8487-92C6A528DB1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
